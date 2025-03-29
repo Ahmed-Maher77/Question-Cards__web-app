@@ -6,7 +6,7 @@ Question Cards is an interactive flashcard web app that helps users study and me
 <hr/>
 
 ## 🔗 Live Demo
-**Live Preview:** [Click here to visit the live demo](https://your-live-demo-link.com)
+**Live Preview:** [https://question-cards-app.netlify.app/](https://question-cards-app.netlify.app/)
 
 <hr/>
 
