@@ -11,6 +11,7 @@ Question Cards is an interactive flashcard web app that helps users study and me
 <hr/>
 
 ## ✨ Key Features
+
 - **Create Flashcards** – Add custom questions and answers.
 - **Flip Cards** – Click on a card to reveal or hide the answer.
 - **Edit & Delete** – Modify or remove flashcards anytime.
@@ -27,8 +28,11 @@ Question Cards is an interactive flashcard web app that helps users study and me
 
 <hr/>
 
-## 📸 Screenshots
-(Include some screenshots of the app interface here)
+## 📸 Website Preview
+<a href="https://question-cards-app.netlify.app/" title="demo">
+  <img src="https://github.com/user-attachments/assets/780c77a0-d809-4a4f-8ee2-fb0d1c94cf77" alt="website preview" width="400">
+</a>
+
 
 <hr/>
 
