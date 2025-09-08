@@ -1,3 +1,18 @@
+// React hooks
+import { memo, useMemo } from "react";
+
+// Dependencies
+import { motion } from "framer-motion";
+
+// Utils
+import {
+	footerVariants,
+	socialLinksVariants,
+	socialLinkVariants,
+	copyrightVariants,
+} from "../utils/Animations_Variants";
+
+// Social media links data
 const socialLinks = [
 	{
 		name: "Portfolio",
@@ -21,58 +36,73 @@ const socialLinks = [
 	},
 ];
 
-const Footer = () => {
+const Footer = ({ shouldAnimate = true }) => {
+	// Memoized values
+	const currentYear = useMemo(() => new Date().getFullYear(), []);
+
 	return (
-		<footer className="bg-dark text-light text-center py-4 mt-5 shadow-lg">
+		<motion.footer
+			className="bg-dark text-light text-center py-4 mt-5 shadow-lg"
+			role="contentinfo"
+			variants={footerVariants}
+			initial={shouldAnimate ? "initial" : false}
+			animate={shouldAnimate ? "animate" : false}
+			exit="exit"
+		>
 			<div className="container">
 				{/* Social Media Links */}
-				<ul className="list-inline mb-3">
-					{socialLinks.map(({ name, url, icon }) => (
-						<li className="list-inline-item mx-2" key={name}>
-							<a
+				<nav aria-label="Social media links">
+					<motion.div
+						className="social-links-container"
+						variants={socialLinksVariants}
+						initial={shouldAnimate ? "hidden" : false}
+						animate={shouldAnimate ? "visible" : false}
+					>
+						{socialLinks.map(({ name, url, icon }) => (
+							<motion.a
+								key={name}
 								href={url}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-light fs-4 social-link"
-								aria-label={name}
+								className="social-link"
+								aria-label={`Visit ${name} profile (opens in new tab)`}
+								variants={socialLinkVariants}
+								whileHover={{
+									scale: 1.1,
+									y: -3,
+									transition: { duration: 0.2 },
+								}}
+								whileTap={{ scale: 0.95 }}
 							>
-								<i className={icon}></i>
-							</a>
-						</li>
-					))}
-				</ul>
+								<i className={icon} aria-hidden="true"></i>
+								<span className="visually-hidden">{name}</span>
+							</motion.a>
+						))}
+					</motion.div>
+				</nav>
 
 				{/* Copyright */}
-				<p className="mb-0">
-					Copyrights &copy; {new Date().getFullYear()}{" "}
+				<motion.p
+					className="mb-0"
+					variants={copyrightVariants}
+					initial={shouldAnimate ? "hidden" : false}
+					animate={shouldAnimate ? "visible" : false}
+				>
+					Copyrights &copy; {currentYear}{" "}
 					<a
 						href="https://ahmedmaher-portfolio.vercel.app/"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="text-light fw-bold text-decoration-none my-name"
+						className="text-light fw-bold my-name"
+						aria-label="Visit Ahmed Maher's portfolio (opens in new tab)"
 					>
 						Ahmed Maher
 					</a>
-				</p>
+				</motion.p>
 			</div>
-
-			{/* Custom CSS for Hover Effect */}
-			<style>
-				{`
-          .social-link, .my-name {
-            transition: transform 0.3s ease, color 0.3s ease;
-          }
-          .social-link:hover {
-            transform: scale(1.2);
-            color: #0d6efd !important;
-          }
-            .my-name:hover {
-                color:rgb(65, 130, 227) !important;
-            }
-        `}
-			</style>
-		</footer>
+		</motion.footer>
 	);
 };
 
-export default Footer;
+// Memoize the Footer component to prevent unnecessary re-renders
+export default memo(Footer);

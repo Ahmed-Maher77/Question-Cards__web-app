@@ -1,24 +1,38 @@
+// React hooks
+import { memo } from "react";
+
+// Dependencies
 import { motion } from "framer-motion";
+
+// Utils
 import { mainHeaderVariants } from "../utils/Animations_Variants";
 
-const Header = () => {
+const Header = ({ shouldAnimate = true }) => {
 	return (
-		<div className="container">
+		<header className="container" role="banner">
 			<motion.h1
 				className="display-6 fw-bold text-primary"
 				variants={mainHeaderVariants}
-				initial="initial"
-				animate="animate"
+				initial={shouldAnimate ? "initial" : false}
+				animate={shouldAnimate ? "animate" : false}
 				exit="exit"
 				key={"mainHeader"}
 			>
-				Study with Fun <br />
-				<small className="text-muted sub-heading">
-					Click on the Card to see the answer
-				</small>
+				Study with Fun
 			</motion.h1>
-		</div>
+			<motion.p
+				className="text-muted sub-heading mt-2"
+				variants={mainHeaderVariants}
+				initial={shouldAnimate ? "initial" : false}
+				animate={shouldAnimate ? "animate" : false}
+				exit="exit"
+				key={"subHeader"}
+			>
+				Click on the cards or use keyboard navigation to reveal answers
+			</motion.p>
+		</header>
 	);
 };
 
-export default Header;
+// Memoize the Header component to prevent unnecessary re-renders
+export default memo(Header);
