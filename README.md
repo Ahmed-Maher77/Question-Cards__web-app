@@ -1,6 +1,4 @@
-# Question Cards
-
-## 📌 Overview
+# Question Cards - Interactive Flashcards
 
 Question Cards is a modern, accessible, and performance-optimized flashcard web app that helps users study and memorize concepts efficiently. Users can create, edit, delete, and flip cards to reveal or hide answers with smooth animations and professional UI design. The app features full accessibility support, dark mode, loading animations, and is built with React performance best practices for an engaging and inclusive learning experience.
 
