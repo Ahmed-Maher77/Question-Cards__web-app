@@ -20,11 +20,12 @@ Question Cards is an interactive flashcard web app that helps users study and me
 
 <hr/>
 
-## 🚀 Technologies Used
-- **Vite** – Fast development and optimized builds.
-- **React.js** – Component-based UI development.
-- **Bootstrap** – Responsive and modern UI components.
-- **Framer Motion** – Smooth animations and transitions.
+## 🚀 Used Technologies  
+
+- **Vite** → Provides fast development environment and optimized production builds.  
+- **React.js** → Enables component-based architecture for dynamic UIs.  
+- **Bootstrap** → Delivers responsive layouts and prebuilt UI components.  
+- **Framer Motion** → Adds smooth animations and transitions for enhanced UX.  
 
 <hr/>
 
