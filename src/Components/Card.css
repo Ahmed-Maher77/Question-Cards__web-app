@@ -37,6 +37,15 @@
 	font-size: 1.3rem;
 }
 
+/* Card actions */
+.edit-card-btn {
+    color: #007bff;
+}
+.delete-card-btn {
+    color: #dc3545;
+}
+
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 	.card {
