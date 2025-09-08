@@ -586,8 +586,7 @@ body.dark-mode footer {
 
 /* Card accessibility improvements */
 .card:focus {
-	outline: 3px solid #007bff;
-	outline-offset: 4px;
+	outline: none;
 	transform: scale(1.02);
 }
 

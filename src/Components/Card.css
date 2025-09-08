@@ -41,8 +41,14 @@
 .edit-card-btn {
     color: #007bff;
 }
+.card.active ~ .card-actions .edit-card-btn {
+    color: #ffffff
+}
 .delete-card-btn {
     color: #dc3545;
+}
+.card.active ~ .card-actions .delete-card-btn {
+    color: #000000;
 }
 
 
